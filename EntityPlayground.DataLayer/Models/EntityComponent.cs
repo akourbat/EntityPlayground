@@ -17,22 +17,22 @@ namespace EntityPlayground.DataLayer.Models
         public Component Component { get; set; }
     }
 
-    public class EntityComponentTypeConfiguration : IEntityTypeConfiguration<EntityComponent>
-    {
-        public void Configure(EntityTypeBuilder<EntityComponent> builder)
-        {
-            builder
-                .HasKey(ec => new {ec.GameEntityId, ec.ComponentId});
+    //public class EntityComponentTypeConfiguration : IEntityTypeConfiguration<EntityComponent>
+    //{
+    //    public void Configure(EntityTypeBuilder<EntityComponent> builder)
+    //    {
+    //        builder
+    //            .HasKey(ec => new {ec.GameEntityId, ec.ComponentId});
 
-            builder
-                .HasOne(ec => ec.GameEntity)
-                .WithMany(e => e.ComponentLinks)
-                .HasForeignKey(ec => ec.GameEntityId);
+    //        builder
+    //            .HasOne(ec => ec.GameEntity)
+    //            .WithMany(e => e.ComponentLinks)
+    //            .HasForeignKey(ec => ec.GameEntityId);
 
-            builder
-                .HasOne(ec => ec.Component)
-                .WithMany(c => c.EntityLinks)
-                .HasForeignKey(ec => ec.ComponentId);
-        }
-    }
+    //        builder
+    //            .HasOne(ec => ec.Component)
+    //            .WithMany(c => c.EntityLinks)
+    //            .HasForeignKey(ec => ec.ComponentId);
+    //    }
+    //}
 }

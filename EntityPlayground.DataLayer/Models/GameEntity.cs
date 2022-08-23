@@ -13,7 +13,9 @@ namespace EntityPlayground.DataLayer.Models
         public Guid GameEntityId { get; set; }
         public ICollection<Connection> Inbound { get; set; }
         public ICollection<Connection> Outbound { get; set; }
-        public ICollection<EntityComponent> ComponentLinks { get; set; }
+
+        public ICollection<Component> Components { get; set; }
+        public List<EntityComponent> ComponentLinks { get; set; }
     }
 
     public class GameEntityTypeConfiguration : IEntityTypeConfiguration<GameEntity>
@@ -38,6 +40,20 @@ namespace EntityPlayground.DataLayer.Models
                 .WithOne(c => c.Target)
                 .HasForeignKey(c => c.TargetId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            // Join table config
+            builder
+                .HasMany(e => e.Components)
+                .WithMany(c => c.Entities)
+                .UsingEntity<EntityComponent>(
+                    ec => ec.HasOne(ec => ec.Component)
+                            .WithMany(c => c.EntityLinks)
+                            .HasForeignKey(ec => ec.ComponentId),
+                    ec => ec.HasOne(ec => ec.GameEntity)
+                            .WithMany(e => e.ComponentLinks)
+                            .HasForeignKey(ec => ec.GameEntityId),
+                    ec => ec.HasKey(ec => new { ec.GameEntityId, ec.ComponentId })
+                 );
         }
     }
 }

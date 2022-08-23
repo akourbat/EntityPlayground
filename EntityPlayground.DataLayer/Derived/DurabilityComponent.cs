@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace EntityPlayground.DataLayer.Derived
 {
+    public class BaseComponent : Component
+    { }
+
     public class DurabilityComponent: Component
     {
         public int Durability { get; set; }

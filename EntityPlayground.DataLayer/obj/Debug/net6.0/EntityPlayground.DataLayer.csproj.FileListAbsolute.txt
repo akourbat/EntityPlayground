@@ -1,6 +1,7 @@
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\bin\Debug\net6.0\EntityPlayground.DataLayer.deps.json
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\bin\Debug\net6.0\EntityPlayground.DataLayer.runtimeconfig.json
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\bin\Debug\net6.0\EntityPlayground.DataLayer.dll
+G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\bin\Debug\net6.0\ref\EntityPlayground.DataLayer.dll
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\bin\Debug\net6.0\EntityPlayground.DataLayer.pdb
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\obj\Debug\net6.0\EntityPlayground.DataLayer.csproj.AssemblyReference.cache
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\obj\Debug\net6.0\EntityPlayground.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
@@ -11,4 +12,3 @@ G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\obj\Debug\net6.0\En
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\obj\Debug\net6.0\refint\EntityPlayground.DataLayer.dll
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\obj\Debug\net6.0\EntityPlayground.DataLayer.pdb
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\obj\Debug\net6.0\EntityPlayground.DataLayer.genruntimeconfig.cache
-G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataLayer\bin\Debug\net6.0\ref\EntityPlayground.DataLayer.dll

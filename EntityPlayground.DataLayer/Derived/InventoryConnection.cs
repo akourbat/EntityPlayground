@@ -19,5 +19,10 @@ namespace EntityPlayground.DataLayer.Derived
     {
         public Guid ComponentTemplateEntityId { get; set; }
     }
+    public class TestConnection: Connection
+    {
+        public int MyProperty { get; set; }
+        
+    }
 }
 

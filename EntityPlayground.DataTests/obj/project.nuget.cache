@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MxbDA4fyw9AHF2dsoa4Ie41EHEft8cfYTEAmC3KkPzSKEsgpntOOtQPsLeBwh+baR4sZzm/wNVo0OVMijZVvsw==",
+  "dgSpecHash": "SwblcZPFkyrQy7w/S4UK8JLNzxBbmiVLi/7dmmPrWAzAu/ArMd9wqYCud6tb3JS4FuPixkOBkEuNwQdITm9moA==",
   "success": true,
-  "projectFilePath": "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataTests\\EntityPlayground.DataTests.csproj",
+  "projectFilePath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataTests\\EntityPlayground.DataTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\akour\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\akour\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",

@@ -23,19 +23,19 @@ namespace EntityPlayground.DataLayer.GameContext
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(GameEntityTypeConfiguration).Assembly);
 
-            var connectionTypes = typeof(Connection).Assembly.GetTypes()
-                .Where(t => t != typeof(Connection) && typeof(Connection).IsAssignableFrom(t));
-            foreach (var type in connectionTypes)
-            {
-                modelBuilder.Entity(type).HasBaseType(type.BaseType);
-            }
+            //var connectionTypes = typeof(Connection).Assembly.GetTypes()
+            //    .Where(t => t != typeof(Connection) && typeof(Connection).IsAssignableFrom(t));
+            //foreach (var type in connectionTypes)
+            //{
+            //    modelBuilder.Entity(type).HasBaseType(type.BaseType);
+            //}
 
-            var componentTypes = typeof(Component).Assembly.GetTypes()
-                .Where(t => t != typeof(Component) && typeof(Component).IsAssignableFrom(t));
-            foreach (var type in componentTypes)
-            {
-                modelBuilder.Entity(type).HasBaseType(type.BaseType);
-            }
+            //var componentTypes = typeof(Component).Assembly.GetTypes()
+            //    .Where(t => t != typeof(Component) && typeof(Component).IsAssignableFrom(t));
+            //foreach (var type in componentTypes)
+            //{
+            //    modelBuilder.Entity(type).HasBaseType(type.BaseType);
+            //}
 
         }
 

@@ -30,8 +30,8 @@ namespace EntityPlayground.DataTests
             var connection1 = new InventoryConnection { Source = entity1, Target = entity2, Slot = 2 };
             var connection2 = new BaseConnection { Source = entity1, Target = entity3 };
 
-            var component1 = new DurabilityComponent { Type = "Durability", Durability=55 };
-            var component2 = new DescriptionComponent { Type = "Description", Description = "Some text" };
+            var component1 = new DurabilityComponent {  Durability=55 };
+            var component2 = new DescriptionComponent { Description = "Some text" };
             var clink1 = new EntityComponent { GameEntity = entity1, Component = component1 };
             var clink2 = new EntityComponent { GameEntity = entity1, Component = component2 };
 
@@ -96,26 +96,22 @@ namespace EntityPlayground.DataTests
 
             ctx.ChangeTracker.Clear();
 
-            var myEntityWithComponents = ctx.GameEntities
-                .Include(e => e.ComponentLinks)
-                .ThenInclude(cl => cl.Component)
-                .Single(e => e.GameEntityId == g1);
-
-            var description = myEntityWithComponents.ComponentLinks
-                .Select(cl => cl.Component)
-                .OfType<DescriptionComponent>()
-                .First().Description;
-
+            var description = ctx.GameEntities
+                .Include(e => e.Components)
+                .Single(e => e.GameEntityId == g1)
+                .Components.OfType<DescriptionComponent>()
+                .First();
+            
             ctx.ChangeTracker.Clear();
 
             var dur = ctx.Set<Component>()
                 .OfType<DurabilityComponent>()
-                .Include(c => c.EntityLinks)
-                .Where( c => c.EntityLinks.Any(el => el.GameEntityId == g1))
-                .First().Durability;
+                .Include(c => c.Entities)
+                .First(c => c.Entities.Contains(entity1)).Durability;
 
-            Assert.Equal("Some text", description);
+            Assert.Equal("Some text", description.Description);
             Assert.Equal(55, dur);
+            Assert.Equal(ComponentType.Description, description.Type);
 
             ctx.ChangeTracker.Clear();
 

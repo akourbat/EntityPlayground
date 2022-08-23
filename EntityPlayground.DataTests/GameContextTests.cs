@@ -66,6 +66,7 @@ namespace EntityPlayground.DataTests
             invCon.Slot = 5;
             ctx.SaveChanges();
             ctx.ChangeTracker.Clear();
+            
             var slot = ctx.Set<Connection>().OfType<InventoryConnection>().Single(c => c.SourceId == g1).Slot;
 
             Assert.Equal(ConnectionType.Inventory, ctx.Set<Connection>().OfType<InventoryConnection>().Single(c => c.SourceId == g1).Type);

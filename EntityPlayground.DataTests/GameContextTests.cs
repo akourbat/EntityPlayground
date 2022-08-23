@@ -93,7 +93,7 @@ namespace EntityPlayground.DataTests
             Assert.Equal(5, slot);
             Assert.Equal(g2, targetEntityId);
             Assert.Equal(1, inventoryConnectionsCount);
-            Assert.Equal(2, totalConnectionsCount);
+            Assert.Equal(totalConnectionsCount, 2);
 
             ctx.ChangeTracker.Clear();
 

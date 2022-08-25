@@ -4,14 +4,14 @@
     "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataTests\\EntityPlayground.DataTests.csproj": {}
   },
   "projects": {
-    "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
+    "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
+        "projectUniqueName": "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
         "projectName": "EntityPlayground.DataLayer",
-        "projectPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
+        "projectPath": "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
         "packagesPath": "C:\\Users\\akour\\.nuget\\packages\\",
-        "outputPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\obj\\",
+        "outputPath": "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -113,8 +113,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
-                "projectPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj"
+              "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
+                "projectPath": "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj"
               }
             }
           }
@@ -132,6 +132,10 @@
             "EfCore.TestSupport": {
               "target": "Package",
               "version": "[5.2.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[6.0.8, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

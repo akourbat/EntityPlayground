@@ -18,7 +18,7 @@ namespace EntityPlayground.DataTests
         public void RelationshipSetupTests()
         {
             //SETUP
-            var options = SqliteInMemory.CreateOptions<GameContext>();
+            var options = SqliteInMemory.CreateOptions<GameContext>(builder => builder.UseChangeTrackingProxies());
 
             using var ctx = new GameContext(options);
             ctx.Database.EnsureCreated();

@@ -10,11 +10,11 @@ namespace EntityPlayground.DataLayer.Models
 {
     public class EntityComponent
     {
-        public Guid GameEntityId { get; set; }
-        public GameEntity GameEntity { get; set; }
+        public virtual Guid GameEntityId { get; set; }
+        public virtual GameEntity GameEntity { get; set; }
 
-        public Guid ComponentId { get; set; }
-        public Component Component { get; set; }
+        public virtual Guid ComponentId { get; set; }
+        public virtual Component Component { get; set; }
     }
 
     //public class EntityComponentTypeConfiguration : IEntityTypeConfiguration<EntityComponent>

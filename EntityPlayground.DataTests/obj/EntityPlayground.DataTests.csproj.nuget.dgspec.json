@@ -4,14 +4,14 @@
     "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataTests\\EntityPlayground.DataTests.csproj": {}
   },
   "projects": {
-    "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
+    "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
+        "projectUniqueName": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
         "projectName": "EntityPlayground.DataLayer",
-        "projectPath": "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
+        "projectPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
         "packagesPath": "C:\\Users\\akour\\.nuget\\packages\\",
-        "outputPath": "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\obj\\",
+        "outputPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -50,6 +50,10 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[6.0.8, )"
             },
@@ -113,8 +117,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
-                "projectPath": "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj"
+              "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
+                "projectPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj"
               }
             }
           }

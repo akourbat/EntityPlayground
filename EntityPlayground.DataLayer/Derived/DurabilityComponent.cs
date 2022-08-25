@@ -12,11 +12,11 @@ namespace EntityPlayground.DataLayer.Derived
 
     public class DurabilityComponent: Component
     {
-        public int Durability { get; set; }
+        public virtual int Durability { get; set; }
     }
 
     public class DescriptionComponent: Component
     {
-        public string Description { get; set; }
+        public virtual string Description { get; set; }
     }
 }

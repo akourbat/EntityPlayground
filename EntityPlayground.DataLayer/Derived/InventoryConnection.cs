@@ -12,16 +12,16 @@ namespace EntityPlayground.DataLayer.Derived
 
     public class InventoryConnection : Connection
     {
-        public byte Slot { get; set; }
+        public virtual byte Slot { get; set; }
     }
 
     public class RecipeConnection: Connection
     {
-        public Guid ComponentTemplateEntityId { get; set; }
+        public virtual Guid ComponentTemplateEntityId { get; set; }
     }
     public class TestConnection: Connection
     {
-        public int MyProperty { get; set; }
+        public virtual int MyProperty { get; set; }
         
     }
 }

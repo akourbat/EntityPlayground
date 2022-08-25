@@ -3160,6 +3160,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.8",
+          "Microsoft.EntityFrameworkCore.Proxies": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
           "Microsoft.Extensions.Configuration": "6.0.1",
           "Microsoft.Extensions.Configuration.Json": "6.0.0"
@@ -9456,8 +9457,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
-              "projectPath": "G:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj"
+            "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
+              "projectPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj"
             }
           }
         }

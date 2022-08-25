@@ -177,3 +177,5 @@ G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataTests\obj\Debug\net6.0\re
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataTests\obj\Debug\net6.0\EntityPlayground.DataTests.pdb
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataTests\obj\Debug\net6.0\EntityPlayground.DataTests.genruntimeconfig.cache
 G:\Dacha VS bits\EntityPlayground\EntityPlayground.DataTests\obj\Debug\net6.0\ref\EntityPlayground.DataTests.dll
+g:\Dacha VS bits\EntityPlayground\EntityPlayground.DataTests\bin\Debug\net6.0\Castle.Core.dll
+g:\Dacha VS bits\EntityPlayground\EntityPlayground.DataTests\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll

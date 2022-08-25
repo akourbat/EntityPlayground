@@ -2,6 +2,7 @@ using EntityPlayground.DataLayer.Derived;
 using EntityPlayground.DataLayer.GameContext;
 using EntityPlayground.DataLayer.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Proxies;
 using TestSupport.EfHelpers;
 
 
@@ -23,17 +24,29 @@ namespace EntityPlayground.DataTests
             using var ctx = new GameContext(options);
             ctx.Database.EnsureCreated();
 
-            var entity1 = new GameEntity { GameEntityId = g1 };
-            var entity2 = new GameEntity { GameEntityId = g2 };
-            var entity3 = new GameEntity { GameEntityId = g3 };
+            var entity1 = ctx.CreateProxy<GameEntity>(e => e.GameEntityId = g1);
+            var entity2 = ctx.CreateProxy<GameEntity>(e => e.GameEntityId = g2);
+            var entity3 = ctx.CreateProxy<GameEntity>(e => e.GameEntityId = g3);
 
-            var connection1 = new InventoryConnection { Source = entity1, Target = entity2, Slot = 2 };
-            var connection2 = new BaseConnection { Source = entity1, Target = entity3 };
+            // var entity1 = new GameEntity { GameEntityId = g1 };
+            // var entity2 = new GameEntity { GameEntityId = g2 };
+            // var entity3 = new GameEntity { GameEntityId = g3 };
 
-            var component1 = new DurabilityComponent {  Durability=55 };
-            var component2 = new DescriptionComponent { Description = "Some text" };
-            var clink1 = new EntityComponent { GameEntity = entity1, Component = component1 };
-            var clink2 = new EntityComponent { GameEntity = entity1, Component = component2 };
+            var connection1 = ctx.CreateProxy<InventoryConnection>(c => { c.Source = entity1; c.Target = entity2; c.Slot = 2; });
+            var connection2 = ctx.CreateProxy<BaseConnection>(c => { c.Source = entity1; c.Target = entity3; });
+
+            // var connection1 = new InventoryConnection { Source = entity1, Target = entity2, Slot = 2 };
+            // var connection2 = new BaseConnection { Source = entity1, Target = entity3 };
+
+            var component1 = ctx.CreateProxy<DurabilityComponent>(c => c.Durability = 55);
+            var component2 = ctx.CreateProxy<DescriptionComponent>(c => c.Description = "Some text");
+            var clink1 = ctx.CreateProxy<EntityComponent>(ec => {ec.GameEntity = entity1; ec.Component = component1;});
+            var clink2 = ctx.CreateProxy<EntityComponent>(ec => {ec.GameEntity = entity1; ec.Component = component2;});
+
+            // var component1 = new DurabilityComponent {  Durability=55 };
+            // var component2 = new DescriptionComponent { Description = "Some text" };
+            // var clink1 = new EntityComponent { GameEntity = entity1, Component = component1 };
+            // var clink2 = new EntityComponent { GameEntity = entity1, Component = component2 };
 
             ctx.AddRange(entity1, entity2, entity3, connection1, connection2, component1, component2, clink1, clink2);
             ctx.SaveChanges();
@@ -93,7 +106,7 @@ namespace EntityPlayground.DataTests
             Assert.Equal(5, slot);
             Assert.Equal(g2, targetEntityId);
             Assert.Equal(1, inventoryConnectionsCount);
-            Assert.Equal(totalConnectionsCount, 2);
+            Assert.Equal(2, totalConnectionsCount);
 
             ctx.ChangeTracker.Clear();
 

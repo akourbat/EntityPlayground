@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,11 @@ namespace EntityPlayground.DataLayer.Models
     }
     public abstract class Component
     {
-        public Guid ComponentId { get; set; }
-        public ComponentType Type { get; set; }
+        public virtual Guid ComponentId { get; set; }
+        public virtual ComponentType Type { get; set; }
 
-        public ICollection<GameEntity> Entities { get; set; }
-        public List<EntityComponent> EntityLinks { get; set; }
+        public virtual ICollection<GameEntity> Entities { get; set; } = new ObservableCollection<GameEntity>();
+        public virtual IList<EntityComponent> EntityLinks { get; set; } = new ObservableCollection<EntityComponent>();
     }
 
     public class ComponentTypeConfiguration : IEntityTypeConfiguration<Component>

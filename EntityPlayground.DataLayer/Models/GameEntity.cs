@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +11,12 @@ namespace EntityPlayground.DataLayer.Models
 {
     public class GameEntity
     {
-        public Guid GameEntityId { get; set; }
-        public ICollection<Connection> Inbound { get; set; }
-        public ICollection<Connection> Outbound { get; set; }
+        public virtual Guid GameEntityId { get; set; }
+        public virtual ICollection<Connection> Inbound { get; set; } = new ObservableCollection<Connection>();
+        public virtual ICollection<Connection> Outbound { get; set; } = new ObservableCollection<Connection>();
 
-        public ICollection<Component> Components { get; set; }
-        public List<EntityComponent> ComponentLinks { get; set; }
+        public virtual ICollection<Component> Components { get; set; }= new ObservableCollection<Component>();
+        public virtual IList<EntityComponent> ComponentLinks { get; set; } = new ObservableCollection<EntityComponent>();
     }
 
     public class GameEntityTypeConfiguration : IEntityTypeConfiguration<GameEntity>

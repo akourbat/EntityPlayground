@@ -17,14 +17,14 @@ namespace EntityPlayground.DataLayer.Models
     }
     public abstract class Connection
     {
-        public ConnectionType Type { get; set; }   
-        public Guid SourceId { get; set; }
-        public GameEntity Source { get; set; }
+        public virtual ConnectionType Type { get; set; }   
+        public virtual Guid SourceId { get; set; }
+        public virtual GameEntity Source { get; set; }
 
-        public Guid TargetId { get; set; }
-        public GameEntity Target { get; set; }
+        public virtual Guid TargetId { get; set; }
+        public virtual GameEntity Target { get; set; }
 
-        public int Quantity { get; set; } = 1;
+        public virtual int Quantity { get; set; } = 1;
     }
 
     public class ConnectionTypeConfiguration : IEntityTypeConfiguration<Connection>

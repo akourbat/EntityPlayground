@@ -1,20 +1,15 @@
+using System.ComponentModel;
+using System.Diagnostics;
 using EntityPlayground.DataLayer.Derived;
 using EntityPlayground.DataLayer.GameContext;
 using EntityPlayground.DataLayer.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Proxies;
 using TestSupport.EfHelpers;
-
-
 
 namespace EntityPlayground.DataTests
 {
     public class GameContextTests
     {
-        private  Guid g1 = new("6086b495-5df3-4048-949a-647c7e62ee61");
-        private Guid g2 = new("5e3eb754-5bd7-4ee3-a26b-7c7aa9dac0fa");
-        private Guid g3 = new("5d808377-a6a6-4131-9a95-a5f145ce07b3");
-
         [Fact]
         public void RelationshipSetupTests()
         {
@@ -24,33 +19,27 @@ namespace EntityPlayground.DataTests
             using var ctx = new GameContext(options);
             ctx.Database.EnsureCreated();
 
-            var entity1 = ctx.CreateProxy<GameEntity>(e => e.GameEntityId = g1);
-            var entity2 = ctx.CreateProxy<GameEntity>(e => e.GameEntityId = g2);
-            var entity3 = ctx.CreateProxy<GameEntity>(e => e.GameEntityId = g3);
+            var entity1 = ctx.CreateProxy<GameEntity>();
+            var entity2 = ctx.CreateProxy<GameEntity>();
+            var entity3 = ctx.CreateProxy<GameEntity>();
+            
+            ctx.AddRange(entity1, entity2, entity3);
+            ctx.SaveChanges();
 
-            // var entity1 = new GameEntity { GameEntityId = g1 };
-            // var entity2 = new GameEntity { GameEntityId = g2 };
-            // var entity3 = new GameEntity { GameEntityId = g3 };
+            var g1 = entity1.GameEntityId;
+            var g2 = entity2.GameEntityId;
+            var g3 = entity3.GameEntityId;
 
             var connection1 = ctx.CreateProxy<InventoryConnection>(c => { c.Source = entity1; c.Target = entity2; c.Slot = 2; });
             var connection2 = ctx.CreateProxy<BaseConnection>(c => { c.Source = entity1; c.Target = entity3; });
-
-            // var connection1 = new InventoryConnection { Source = entity1, Target = entity2, Slot = 2 };
-            // var connection2 = new BaseConnection { Source = entity1, Target = entity3 };
 
             var component1 = ctx.CreateProxy<DurabilityComponent>(c => c.Durability = 55);
             var component2 = ctx.CreateProxy<DescriptionComponent>(c => c.Description = "Some text");
             var clink1 = ctx.CreateProxy<EntityComponent>(ec => {ec.GameEntity = entity1; ec.Component = component1;});
             var clink2 = ctx.CreateProxy<EntityComponent>(ec => {ec.GameEntity = entity1; ec.Component = component2;});
 
-            // var component1 = new DurabilityComponent {  Durability=55 };
-            // var component2 = new DescriptionComponent { Description = "Some text" };
-            // var clink1 = new EntityComponent { GameEntity = entity1, Component = component1 };
-            // var clink2 = new EntityComponent { GameEntity = entity1, Component = component2 };
-
-            ctx.AddRange(entity1, entity2, entity3, connection1, connection2, component1, component2, clink1, clink2);
+            ctx.AddRange(connection1, connection2, component1, component2, clink1, clink2);
             ctx.SaveChanges();
-
             ctx.ChangeTracker.Clear();
 
             var inventoryConnectionsCount = ctx.GameEntities
@@ -89,10 +78,13 @@ namespace EntityPlayground.DataTests
             var e1c1 = ctx.GameEntities.AsNoTracking().Include(e => e.Outbound).Single(e => e.GameEntityId == g1);
             var c1e1 = e1c1.Outbound.OfType<InventoryConnection>().FirstOrDefault();
             ctx.Attach(c1e1);
+            string output;
+            ((INotifyPropertyChanged)c1e1).PropertyChanged += ((o, args) => output =args.PropertyName);
             c1e1.Slot = 12;
             ctx.SaveChanges();
             ctx.ChangeTracker.Clear();
-            var e1c2 = ctx.GameEntities.AsNoTracking().Include(e => e.Outbound).Single(e => e.GameEntityId == g1);
+
+            var e1c2 = ctx.GameEntities.AsNoTrackingWithIdentityResolution().Include(e => e.Outbound).Single(e => e.GameEntityId == g1);
             Assert.Equal(12, e1c2.Outbound.OfType<InventoryConnection>().FirstOrDefault().Slot);
 
             ctx.ChangeTracker.Clear();
@@ -118,7 +110,7 @@ namespace EntityPlayground.DataTests
             
             ctx.ChangeTracker.Clear();
 
-            var dur = ctx.Set<Component>()
+            var dur = ctx.Set<EntityPlayground.DataLayer.Models.Component>()
                 .OfType<DurabilityComponent>()
                 .Include(c => c.Entities)
                 .First(c => c.Entities.Contains(entity1)).Durability;

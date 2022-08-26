@@ -26,9 +26,9 @@ namespace EntityPlayground.DataLayer.Models
             builder
                 .HasKey(x => x.GameEntityId);
 
-            builder
-                .Property(e => e.GameEntityId)
-                .ValueGeneratedNever();
+            // builder
+            //     .Property(e => e.GameEntityId)
+            //     .ValueGeneratedNever();
 
             builder
                 .HasMany<Connection>(e => e.Outbound)

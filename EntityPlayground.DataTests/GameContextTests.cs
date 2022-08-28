@@ -78,14 +78,15 @@ namespace EntityPlayground.DataTests
             var e1c1 = ctx.GameEntities.AsNoTracking().Include(e => e.Outbound).Single(e => e.GameEntityId == g1);
             var c1e1 = e1c1.Outbound.OfType<InventoryConnection>().FirstOrDefault();
             ctx.Attach(c1e1);
-            string output;
-            ((INotifyPropertyChanged)c1e1).PropertyChanged += ((o, args) => output =args.PropertyName);
+            string output = string.Empty;
+            (c1e1 as INotifyPropertyChanged).PropertyChanged += ((o, args) => output = args.PropertyName);
             c1e1.Slot = 12;
             ctx.SaveChanges();
             ctx.ChangeTracker.Clear();
 
             var e1c2 = ctx.GameEntities.AsNoTrackingWithIdentityResolution().Include(e => e.Outbound).Single(e => e.GameEntityId == g1);
             Assert.Equal(12, e1c2.Outbound.OfType<InventoryConnection>().FirstOrDefault().Slot);
+            Assert.Equal("Slot", output); // Check that proxy uses INotify
 
             ctx.ChangeTracker.Clear();
 

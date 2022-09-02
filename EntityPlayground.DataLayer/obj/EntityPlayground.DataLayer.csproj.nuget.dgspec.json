@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {}
+    "D:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {}
   },
   "projects": {
-    "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
+    "D:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
+        "projectUniqueName": "D:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
         "projectName": "EntityPlayground.DataLayer",
-        "projectPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
+        "projectPath": "D:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
         "packagesPath": "C:\\Users\\akour\\.nuget\\packages\\",
-        "outputPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\obj\\",
+        "outputPath": "D:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\akour\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

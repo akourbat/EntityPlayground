@@ -9427,21 +9427,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\akour\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\akour\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataTests\\EntityPlayground.DataTests.csproj",
+      "projectUniqueName": "D:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataTests\\EntityPlayground.DataTests.csproj",
       "projectName": "EntityPlayground.DataTests",
-      "projectPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataTests\\EntityPlayground.DataTests.csproj",
+      "projectPath": "D:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataTests\\EntityPlayground.DataTests.csproj",
       "packagesPath": "C:\\Users\\akour\\.nuget\\packages\\",
-      "outputPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataTests\\obj\\",
+      "outputPath": "D:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataTests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\akour\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -9457,8 +9453,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
-              "projectPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj"
+            "D:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj": {
+              "projectPath": "D:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj"
             }
           }
         }

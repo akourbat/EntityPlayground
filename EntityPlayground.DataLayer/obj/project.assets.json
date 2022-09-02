@@ -7343,21 +7343,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\akour\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\akour\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
+      "projectUniqueName": "d:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
       "projectName": "EntityPlayground.DataLayer",
-      "projectPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
+      "projectPath": "d:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataLayer\\EntityPlayground.DataLayer.csproj",
       "packagesPath": "C:\\Users\\akour\\.nuget\\packages\\",
-      "outputPath": "g:\\Dacha VS bits\\EntityPlayground\\EntityPlayground.DataLayer\\obj\\",
+      "outputPath": "d:\\VS2022 Projects\\EntityPlayground\\EntityPlayground.DataLayer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\akour\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
